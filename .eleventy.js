@@ -1,0 +1,14 @@
+module.exports = async function(eleventyConfig) {
+    eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
+
+      
+    return {
+        pathPrefix: "/",
+        dir: {
+            input: "src",
+            includes: "_includes",
+            output: "docs",
+        }
+
+    };
+};

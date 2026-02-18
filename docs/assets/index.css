@@ -1,0 +1,161 @@
+body{
+    overflow: hidden;
+}
+main{
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-top: 2em;
+    
+    background-color: #5A605E;
+    overflow: hidden;
+}
+#right{
+    background-color: #2E4299;
+}
+main > div {
+    position: relative;
+    padding:1em;
+  }
+  
+  #games { transform: rotate(-15deg); }
+  #draw  { transform: rotate(12deg); }
+  #dolls { transform: rotate(-8deg) translateY(-10px); }
+  #misc  { transform: rotate(15deg) translateY(8px); }
+  
+  #dolls::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 60px;
+    height: 16px;
+    background: rgba(255,255,200,0.7);
+    transform: rotate(18deg);
+    z-index: 2;
+  }
+  
+  
+.items:nth-child(odd) {
+    transform: rotate(-1.5deg);
+  }
+  
+.items:nth-child(even) {
+    transform: rotate(1deg);
+  }
+
+  
+.items {
+    display: inline-block;
+    text-decoration: none;
+}
+.img-wrap{
+    position:relative;
+    width: 400px;
+    height: 200px;
+}
+.img-wrap img{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(6px 10px 12px rgba(0,0,0,0.2));
+}
+.img-wrap .hover{
+    display:none;
+}
+.img-wrap:hover .normal{
+    position: absolute;
+    inset:0;
+    display: none;
+    transition: opacity ease;
+}
+.img-wrap:hover .hover{
+    display:block;
+}
+
+.pics{
+    position:absolute;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#nato{
+    width: 150px;
+    height:150px;
+    bottom:5%;
+    left:25%;
+    transform: rotate(-15deg);
+}
+#dog{
+    width: 200px;
+    height:200px;
+    bottom: 3%;
+    left:40%;
+    transform: rotate(15deg);
+}
+#cat{
+    width: 200px;
+    height: 200px;
+    bottom: 2%;
+    right: 15%;
+    transform: rotate(-25deg);
+}
+
+#owl {
+    position: absolute;
+    height: 200px;
+    top: 27%;
+    right: 14%;
+    transform: rotate(15deg);
+}
+#owl img {
+    height: 80%;
+    width: auto;
+}
+#owl:hover{
+    transform: rotate(180deg);
+}
+
+#title{
+    position:absolute;
+    top: 35%;
+    left:15%;
+    transform: rotate(-5deg);
+    pointer-events: none;
+}
+.mini-titles{
+    width:40%;
+    transition: all 0.3s ease-in-out;
+}
+.mini-titles:hover{
+    transform: translateY(-5px);
+}
+#draw .mini-titles{
+    width:50%;
+}
+#dolls .mini-titles{
+    width:70%;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #title img{
+        width: 70%;
+        transform: rotate(15deg);
+    }
+  }
+  
+@media screen and (max-width: 768px) and (orientation:portrait){
+    body{
+        overflow:auto;
+    }
+    .pics{
+        display: none;
+    }
+    #title{
+        position:static;
+    }
+    #title img{
+        width:90%;
+    }
+}

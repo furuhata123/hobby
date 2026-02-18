@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>{{ title or "hobby" }}</title>
+    <link rel="stylesheet" href="{{'/assets/style.css' | url }}">
+    <link rel="stylesheet" href="{{'/assets/index.css' | url }}">
+
+  </head>
+  <body>
+    <!-- 通用右边栏 -->
+    <main>
+        {{ content | safe }}
+    </main>
+    <div id="right">
+        <p>right bar fixed</p>
+    </div>
+
+    {% if custom_scripts %}
+      {{ custom_scripts | safe }}
+    {% endif %}
+  </body>
+
+
+</html>

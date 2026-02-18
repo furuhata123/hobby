@@ -1,0 +1,75 @@
+---
+title: Hobby
+layout: layout.njk
+custom_scripts:
+---
+<div id="games">
+    <a class="items" href="/games/" target="_blank">
+    <div class="img-wrap">
+        <img class="normal" src="/assets/games/icon.webp" loading="lazy">
+        <img class="hover" src="/assets/games/icon-hover.webp" loading="lazy">
+    </div>
+        <img class="mini-titles" src="/assets/main/games.webp">
+    </a>
+</div>
+
+<div id="draw">
+    <a class="items" href="/draw/" target="_blank">
+    <div class="img-wrap">
+        <img class="normal" src="/assets/draw/icon.webp" loading="lazy">
+        <img class="hover" src="/assets/draw/icon-hover.webp" loading="lazy">
+    </div>
+        <img class="mini-titles" src="/assets/main/drawing.webp">
+    </a>
+</div>
+
+<div id="dolls">
+    <a class="items" href="/dolls/" target="_blank">
+    <div class="img-wrap">
+        <img class="normal" src="/assets/dolls/icon.webp" loading="lazy">
+        <img class="hover" src="/assets/dolls/icon-hover.webp" loading="lazy">
+    </div>
+    
+    <img class="mini-titles" src="/assets/main/dolls.webp">
+    </a>
+</div>
+
+<div id="misc">
+    <a class="items" href="/misc/" target="_blank">
+    <div class="img-wrap">
+        <img class="normal" src="/assets/misc/icon.webp" loading="lazy">
+        <img class="hover" src="/assets/misc/icon-hover.webp" loading="lazy">
+    </div>
+        <img class="mini-titles" src="/assets/main/misc.webp">
+    </a>
+</div>
+
+<div class="pics" data-name="nato" id="nato"></div>
+<div class="pics" data-name="dog" id="dog"></div>
+<div class="pics" data-name="cat" id="cat"></div>
+<div id="owl">
+    <img src="/assets/main/owl.webp" alt="owl">
+</div>
+
+<div id="title">
+    <img src="/assets/main/hobby.webp" alt="title">
+</div>
+
+  <script>
+    document.querySelectorAll(".pics").forEach(el => {
+  const name = el.dataset.name;
+
+  const normal = `/assets/main/${name}.webp`;
+  const hover  = `/assets/main/${name}-hover.webp`;
+
+  el.style.backgroundImage = `url(${normal})`;
+
+  el.addEventListener("mouseenter", () => {
+    el.style.backgroundImage = `url(${hover})`;
+  });
+
+  el.addEventListener("mouseleave", () => {
+    el.style.backgroundImage = `url(${normal})`;
+  });
+});
+</script>
