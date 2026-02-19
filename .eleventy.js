@@ -1,4 +1,4 @@
-module.exports = async function(eleventyConfig) {
+module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
 
       
