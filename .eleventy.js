@@ -1,9 +1,10 @@
+const isDev = process.env.ELEVENTY_RUN_MODE === "serve";
 module.exports = async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
 
       
     return {
-        pathPrefix: "/",
+        pathPrefix: isDev ? "/" : "/hobby/",
         dir: {
             input: "src",
             includes: "_includes",
